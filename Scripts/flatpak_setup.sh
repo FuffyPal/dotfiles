@@ -15,7 +15,7 @@ elif [[ "$choice" == "n" || "$choice" == "no" ]]; then
     sudo apt update
     sudo apt install -y flatpak
     exit 1
-  elif [[ "$twochoice" == "fedora" || "$twochoice" == "rocky" || "$twochoice" == "rhel" || "$twochoice" == "mageia" ]]; then
+  elif [[ "$twochoice" == "fedora" || "$twochoice" == "rocky" || "$twochoice" == "rhel" ]]; then
     sudo dnf install -y flatpak
     exit 1
   else
