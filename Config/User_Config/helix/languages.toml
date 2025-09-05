@@ -1,0 +1,45 @@
+[language-server]
+pylsp = { command = "pylsp" }
+rust-analyzer = { command = "rust-analyzer" }
+bash-language-server = { command = "bash-language-server", args = ["--stdio"] }
+marksman = { command = "marksman", args = ["--stdio"] }
+yaml-language-server = { command = "yaml-language-server", args = ["--stdio"] }
+taplo = { command = "taplo", args = ["lsp", "stdio"] }
+
+[[language]]
+name = "python"
+language-servers = [ "pylsp" ]
+scope = "source.python"
+file-types = ["py"]
+roots = ["pyproject.toml"]
+
+[[language]]
+name = "rust"
+language-servers = [ "rust-analyzer" ]
+scope = "source.rust"
+file-types = ["rs"]
+roots = ["Cargo.toml"]
+
+[[language]]
+name = "bash"
+language-servers = [ "bash-language-server" ]
+scope = "source.bash"
+file-types = ["sh"]
+
+[[language]]
+name = "markdown"
+language-servers = [ "marksman" ]
+scope = "text.markdown"
+file-types = ["md"]
+
+[[language]]
+name = "yaml"
+language-servers = [ "yaml-language-server" ]
+scope = "source.yaml"
+file-types = ["yaml", "yml"]
+
+[[language]]
+name = "toml"
+language-servers = [ "taplo" ]
+scope = "source.toml"
+file-types = ["toml"]
