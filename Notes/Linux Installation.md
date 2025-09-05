@@ -6,6 +6,8 @@
 - full disk encryption
   - lvm on luks
   - enabled TRIM (pls dont forget)
+- Systemd-resolved
+  - for dns over tls and dnssec 
 - drivers
   - nvidia
   - nvidia container toolkit
