@@ -1,4 +1,4 @@
-# Helooww they i howww are you
+# Helooww , howww are you
 ![wiiiii](image.png)
 
 # here is my dotfiles
