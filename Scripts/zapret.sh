@@ -1,7 +1,7 @@
 echo "helloowww it is zapret config setup"
 echo "
 sudo rm /opt/zapret/config
-sudo cp ../Config/Zapret/config /opt/zapret/config
+sudo cp ../Config/User_Config/Zapret/config /opt/zapret/config
 sudo systemctl enable --now zapret.service 
 "
 read -p "y/n " choice
