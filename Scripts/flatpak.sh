@@ -14,6 +14,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     ExtensionManager ( gnome extension manager)
     Thunderbird
     easyeffects
+    FluffyChat 
     mcpelauncher ( minecraft bedrock launcher )
     PrismLauncher ( minecraft java launcher )
     Steam
@@ -45,6 +46,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     com.github.wwmm.easyeffects
     io.mrarm.mcpelauncher
     org.prismlauncher.PrismLauncher
+    im.fluffychat.Fluffychat
     com.valvesoftware.Steam
     net.veloren.airshipper
     dev.vencord.Vesktop
