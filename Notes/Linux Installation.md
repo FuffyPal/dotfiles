@@ -4,57 +4,57 @@
 - Secure Boot keys
   - I'm like the secure boot because i think secure
 - full disk encryption
- - lvm on luks
- - enabled TRIM (pls dont forget)
+  - lvm on luks
+  - enabled TRIM (pls dont forget)
 - drivers
- - nvidia
- - nvidia container toolkit
+  - nvidia
+  - nvidia container toolkit
 - kinda a softwares
- - Games
-   - prism launcher ( for minecraft java )
-   - bedrock launcher ( for bedorck )
-   - steam
-   - veloren
- - multimedia
-   - celluloid
- - Terminal
-   - helix ( install lsp servers )
-   - git
- - Programming
-   - helix
-   - python
-   - rust
-   - npm
-   - lmstuido
-   - comfyui ( podman version )
- - Communication
-   - discord
-   - fluffychat ( matrix client )
-   - thunderbird
- - Creative
-   - blender
-   - kooha
-   - krita
-   - gimp
- - General
-   - firefox
-   - easyeffect
-   - nextcloud
-   - timeshift
-   - logseq
-   - localsend
- - gnome extensions
-   - AppIndicator and KStatusNotifierItem Support
-   - Auto Adwaita Colors
-   - Battery Health Charging
-   - Bluetooth Battery Meter
-   - Blur my Shell
-   - Caffeine
-   - Clipboard Indicator
-   - Color Picker
-   - Compiz windows effect
-   - Dash to Dock
-   - Forge
-   - GSConnect
-   - Just Perfection
-   - Weather O'clock
+   - Games
+     - prism launcher ( for minecraft java )
+     - bedrock launcher ( for bedorck )
+     - steam
+     - veloren
+   - multimedia
+     - celluloid
+   - Terminal
+     - helix ( install lsp servers )
+     - git
+   - Programming
+     - helix
+     - python
+     - rust
+     - npm
+     - lmstuido
+     - comfyui ( podman version )
+   - Communication
+     - discord
+     - fluffychat ( matrix client )
+     - thunderbird
+   - Creative
+     - blender
+     - kooha
+     - krita
+     - gimp
+   - General
+     - firefox
+     - easyeffect
+     - nextcloud
+     - timeshift
+     - logseq
+     - localsend
+   - gnome extensions
+     - AppIndicator and KStatusNotifierItem Support
+     - Auto Adwaita Colors
+     - Battery Health Charging
+     - Bluetooth Battery Meter
+     - Blur my Shell
+     - Caffeine
+     - Clipboard Indicator
+     - Color Picker
+     - Compiz windows effect
+     - Dash to Dock
+     - Forge
+     - GSConnect
+     - Just Perfection
+     - Weather O'clock
