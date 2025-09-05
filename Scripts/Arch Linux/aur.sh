@@ -11,7 +11,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     cd ../
     rm -rf yay"
     echo "heyy do u confirm"
-    read -p "y/n" twochoice
+    read -p "y/n " twochoice
     twochoice=$(echo "$twochoice" | tr '[:upper:]' '[:lower:]')
     if [[ "$twochoice" == "y" || "$twochoice" == "yes" ]]; then
         git clone https://aur.archlinux.org/yay.git
