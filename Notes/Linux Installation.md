@@ -20,6 +20,7 @@
    - Terminal
      - helix ( install lsp servers )
      - git
+     - git-lfs 
    - Programming
      - helix
      - python
