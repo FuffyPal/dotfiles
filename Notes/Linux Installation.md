@@ -7,7 +7,7 @@
   - lvm on luks
   - enabled TRIM (pls dont forget)
 - Systemd-resolved
-  - for dns over tls and dnssec 
+  - for dns over tls and dnssec
 - drivers
   - nvidia
   - nvidia container toolkit
@@ -28,6 +28,8 @@
      - python
      - rust
      - npm
+     - git
+     - git-lfs
      - lmstuido
      - comfyui ( podman version )
    - Communication
@@ -45,6 +47,7 @@
      - nextcloud
      - timeshift
      - logseq
+     - firewalld 
      - localsend
    - gnome extensions
      - AppIndicator and KStatusNotifierItem Support
