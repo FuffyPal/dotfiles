@@ -1,4 +1,4 @@
 # Helooww , howww are you
-![wiiiii](image.png)
+![wiiiii](Blider/image.png)
 
 # here is my dotfiles
