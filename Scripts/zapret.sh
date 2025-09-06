@@ -1,15 +1,23 @@
-echo "helloowww it is zapret config setup"
+echo "helloowww it is zapret setup im wilkommennnn"
 echo "
-sudo rm /opt/zapret/config
-sudo cp ../Config/User_Config/Zapret/config /opt/zapret/config
-sudo systemctl enable --now zapret.service 
+wget https://github.com/bol-van/zapret/releases/download/v71.4/zapret-v71.4.tar.gz
+tar -xvf zapret-v71.4.tar.gz
+rm -rf zapret-v71.4.tar.gz
+cp ../Config/User_Config/Zapret/config ./zapret-v71.4/config.default
+cd zapret-v71.4/
+chmod +x install_easy.sh
+./install_easy.sh
 "
 read -p "y/n " choice
 choice=$(echo "$choice" | tr '[:upper:]' '[:lower:]')
 if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
-  sudo rm /opt/zapret/config
-  sudo cp ../Config/Zapret/config /opt/zapret/config
-  sudo systemctl enable --now zapret.service
+  wget https://github.com/bol-van/zapret/releases/download/v71.4/zapret-v71.4.tar.gz
+  tar -xvf zapret-v71.4.tar.gz
+  rm -rf zapret-v71.4.tar.gz
+  cp ../Config/User_Config/Zapret/config ./zapret-v71.4/config.default
+  cd zapret-v71.4/
+  chmod +x install_easy.sh
+  ./install_easy.sh
   exit 1
 else
   echo "tschüss"
