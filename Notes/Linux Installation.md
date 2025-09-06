@@ -31,6 +31,7 @@
      - git
      - git-lfs
      - lmstuido
+     - vscodium-bin
      - comfyui ( podman version )
    - Communication
      - discord
