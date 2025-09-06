@@ -65,3 +65,5 @@
      - GSConnect
      - Just Perfection
      - Weather O'clock
+     - Quick Settings Tweaks
+     - Media Controls
