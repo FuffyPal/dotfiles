@@ -33,6 +33,7 @@
      - lmstuido
      - vscodium-bin
      - comfyui ( podman version )
+     - bzip3
    - Communication
      - discord
      - fluffychat ( matrix client )
