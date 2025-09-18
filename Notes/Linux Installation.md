@@ -19,6 +19,8 @@
      - veloren
    - multimedia
      - celluloid
+     - yt-dlp
+     - ffmpeg
    - Terminal
      - helix ( install lsp servers )
      - git
