@@ -29,7 +29,7 @@ alias grep="grep --color=auto"
 alias helix="/bin/hx"
 alias hx="/bin/hx"
 
-source ./.alias
+source $HOME/.alias
 
 # Paths
 export PATH="$HOME/.local/bin:$PATH"
