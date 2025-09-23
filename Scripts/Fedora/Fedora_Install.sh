@@ -35,6 +35,7 @@ papirus-icon-theme
 steam-devices
 bzip3
 zed
+btrfs-assistant
 git-lfs
 git
 tailscale
