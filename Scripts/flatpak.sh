@@ -39,7 +39,6 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     io.github.celluloid_player.Celluloid
     io.github.seadve.Kooha
     org.localsend.localsend_app
-    com.logseq.Logseq
     app/com.github.tchx84.Flatseal
     com.mattjakeman.ExtensionManager
     org.mozilla.Thunderbird
@@ -50,6 +49,8 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     com.valvesoftware.Steam
     net.veloren.airshipper
     dev.vencord.Vesktop
+    dev.deedles.Trayscale
+    net.cozic.joplin_desktop
     io.ente.auth
     "
     echo "Flatpak repolarrı ekleniyor"
