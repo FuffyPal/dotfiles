@@ -1,18 +1,28 @@
 #!/bin/bash
 
 echo "Enable rpm fusion"
-Repos="
+rpmfusion="
 https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 "
-sudo dnf install -y $Repos
+sudo dnf install -y $rpmfusion
 if [ $? -eq 0 ]; then
     echo "Rpm Fusion successful ... "
 else
     echo "Rpm Fusion  unsuccessful !!!"
     exit 1
 fi
+
+echo "enable terra repo"
+sudo dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release 
+if [ $? -eq 0 ]; then
+    echo "terra repo successful ... "
+else
+    echo "terra repo  unsuccessful !!!"
+    exit 1
+fi
+
 package="
 podman
 firewalld
@@ -24,11 +34,13 @@ gnome-tweaks
 papirus-icon-theme
 steam-devices
 bzip3
+zed
 git-lfs
 git
+tailscale
 rust-analyzer
 nodejs-npm
-gnome-terminal
+ptyxis
 nextcloud-client
 nextcloud-client-nautilus
 helix
@@ -55,6 +67,45 @@ else
     exit 1
 fi
 
+echo "Secure boot enable ..."
+echo "Secure boot ASCII en keybord"
+sudo kmodgenca -a
+if [ $? -eq 0 ]; then
+	echo "Secure boot import"
+	sudo mokutil --import /etc/pki/akmods/certs/public_key.der
+	if [ $? -eq 0 ]; then
+		echo "secure boot successfull ..."
+	else 
+		echo "secure boot unsuccessfull ... error import area"
+		exit 1
+	fi
+else 
+	echo "sucre boot unseccesfull ... error generade"
+	sudo kmodgenca -a --force
+	if [ $? -eq 0 ]; then
+		echo "secure boot import"
+		sudo mokutil --import /etc/pki/akmods/certs/public_key.der
+		if  [ $? -eq 0 ]; then
+			echo "sucre boot successfull ... but force mod"
+		else 
+			echo "secure boot unseccessfull .. error import area"
+			exit 1
+		fi
+	else 
+		echo "secure boot unseccesfull ... error gnerade force mode"
+		exit 1
+	fi
+fi
+
+echo "system upgrade"
+sudo dnf update -y
+if [ $? -eq 0 ]; then
+    echo "system upgrade successfull ..."
+else
+    echo "system upgrade unsuccsessfull !!!"
+    exit 1
+fi
+ 
 if command -v lspci > /dev/null; then
     if lspci | grep -i nvidia > /dev/null; then
         echo "NVIDIA GPU found"
