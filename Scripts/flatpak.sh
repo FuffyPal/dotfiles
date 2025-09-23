@@ -9,7 +9,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     Celluloid ( vlc alternative )
     Kooha ( secrean record )
     localsend_app
-    Logseq ( obsidian alternative )
+    joplin_desktop ( obsidian and logseq alternative )
     Flatseal ( flatpak manager )
     ExtensionManager ( gnome extension manager)
     Thunderbird
@@ -18,6 +18,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     mcpelauncher ( minecraft bedrock launcher )
     PrismLauncher ( minecraft java launcher )
     Steam
+    rewaita
     airshipper ( veloren launcher )
     Vesktop ( discord )
     ente auth
@@ -44,6 +45,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
     io.mrarm.mcpelauncher
+    io.github.swordpuffin.rewaita
     org.prismlauncher.PrismLauncher
     im.fluffychat.Fluffychat
     com.valvesoftware.Steam
