@@ -44,6 +44,7 @@ ptyxis
 nextcloud-client
 nextcloud-client-nautilus
 helix
+lolcat
 yt-dlp
 yt-dlp-bash-completion
 ffmpeg-free
