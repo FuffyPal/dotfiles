@@ -50,7 +50,7 @@
      - easyeffect
      - nextcloud
      - timeshift
-     - logseq
+     - joplin
      - firewalld 
      - localsend
    - gnome extensions
