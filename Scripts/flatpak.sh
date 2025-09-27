@@ -44,13 +44,9 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     com.mattjakeman.ExtensionManager
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
-    io.mrarm.mcpelauncher
     io.github.swordpuffin.rewaita
-    org.prismlauncher.PrismLauncher
     org.gtkhash.gtkhash
     im.fluffychat.Fluffychat
-    com.valvesoftware.Steam
-    net.veloren.airshipper
     de.haeckerfelix.Fragments
     dev.vencord.Vesktop
     dev.deedles.Trayscale
