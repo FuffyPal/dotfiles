@@ -50,6 +50,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     im.fluffychat.Fluffychat
     com.valvesoftware.Steam
     net.veloren.airshipper
+    de.haeckerfelix.Fragments
     dev.vencord.Vesktop
     dev.deedles.Trayscale
     net.cozic.joplin_desktop
