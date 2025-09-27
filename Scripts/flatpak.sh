@@ -47,6 +47,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     io.mrarm.mcpelauncher
     io.github.swordpuffin.rewaita
     org.prismlauncher.PrismLauncher
+    org.gtkhash.gtkhash
     im.fluffychat.Fluffychat
     com.valvesoftware.Steam
     net.veloren.airshipper
