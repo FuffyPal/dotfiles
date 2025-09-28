@@ -64,9 +64,10 @@
      - Color Picker
      - Compiz windows effect
      - Dash to Dock
-     - Forge
+     - Tiling shell
      - GSConnect
      - Just Perfection
      - Weather O'clock
      - Quick Settings Tweaks
      - Media Controls
+     - wiggle
