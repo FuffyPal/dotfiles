@@ -14,7 +14,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     ExtensionManager ( gnome extension manager)
     Thunderbird
     easyeffects
-    FluffyChat 
+    FluffyChat
     mcpelauncher ( minecraft bedrock launcher )
     PrismLauncher ( minecraft java launcher )
     Steam
@@ -35,12 +35,14 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     #FLATPAK REPO LIST
     FRL_FLATHUB="flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
     #FLATPAK APP LIST
-    FPL_REAL="--user flathub 
+    FPL_REAL="--user flathub
     org.mozilla.firefox
     io.github.celluloid_player.Celluloid
     io.github.seadve.Kooha
     org.localsend.localsend_app
     app/com.github.tchx84.Flatseal
+    com.github.maoschanz.drawing
+    com.vixalien.sticky
     com.mattjakeman.ExtensionManager
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
@@ -66,8 +68,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
 
 elif [[ "$choice" == "n" || "$choice" == "no" ]]; then
     echo "Owwww okey tchüss ..."
-    exit 1 
+    exit 1
 else
     echo "Please Y or N ..."
 fi
-
