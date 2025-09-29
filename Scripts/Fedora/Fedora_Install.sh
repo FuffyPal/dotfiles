@@ -4,8 +4,8 @@ echo "Enable rpm fusion"
 rpmfusion="
 https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
 "
+
 sudo dnf install -y $rpmfusion
 if [ $? -eq 0 ]; then
     echo "Rpm Fusion successful ... "
@@ -20,6 +20,18 @@ if [ $? -eq 0 ]; then
     echo "terra repo successful ... "
 else
     echo "terra repo  unsuccessful !!!"
+    exit 1
+fi
+
+echo "google chrome and nvidia driver repo"
+sudo dnf install -y fedora-workstation-repositories
+sudo dnf config-manager setopt google-chrome.enabled=1
+sudo dnf config-manager setopt rpmfusion-nonfree-nvidia-driver.enabled=1
+
+if [ $? -eq 0 ]; then
+    echo "google chrome and nvidia driver repo successful ... "
+else
+    echo "google chrome and nvidia driver repo  unsuccessful !!!"
     exit 1
 fi
 
