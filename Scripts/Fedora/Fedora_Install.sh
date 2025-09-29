@@ -39,6 +39,7 @@ btrfs-assistant
 git-lfs
 git
 tailscale
+rustup
 rust-analyzer
 nodejs-npm
 ptyxis
@@ -49,6 +50,7 @@ lolcat
 yt-dlp
 yt-dlp-bash-completion
 ffmpeg-free
+gnome-console
 "
 
 nvidia="
