@@ -44,6 +44,10 @@ flatpak
 vim
 gnome-tweaks
 papirus-icon-theme
+kmodtool
+akmods
+mokutil
+openssl
 steam-devices
 bzip3
 zed
