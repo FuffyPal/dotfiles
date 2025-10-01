@@ -37,7 +37,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     #FLATPAK APP LIST
     FPL_REAL="--user flathub
     org.mozilla.firefox
-    io.github.celluloid_player.Celluloid
+    com.github.rafostar.Clapper
     io.github.seadve.Kooha
     org.localsend.localsend_app
     app/com.github.tchx84.Flatseal
