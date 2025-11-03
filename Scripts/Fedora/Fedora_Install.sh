@@ -59,8 +59,7 @@ rustup
 rust-analyzer
 nodejs-npm
 ptyxis
-nextcloud-client
-nextcloud-client-nautilus
+syncthing
 helix
 lolcat
 yt-dlp

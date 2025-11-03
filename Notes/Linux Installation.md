@@ -48,7 +48,7 @@
    - General
      - firefox
      - easyeffect
-     - nextcloud
+     - syncthing
      - timeshift
      - joplin
      - firewalld 
