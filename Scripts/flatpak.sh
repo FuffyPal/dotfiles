@@ -20,7 +20,6 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     Steam
     rewaita
     airshipper ( veloren launcher )
-    Vesktop ( discord )
     ente auth
   "
   echo "heyy do u confirm"
