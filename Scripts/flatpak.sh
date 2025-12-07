@@ -41,6 +41,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     com.github.rafostar.Clapper
     io.github.seadve.Kooha
     org.telegram.desktop
+    com.valvesoftware.Steam
     org.localsend.localsend_app
     app/com.github.tchx84.Flatseal
     com.github.maoschanz.drawing
