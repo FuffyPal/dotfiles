@@ -9,6 +9,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     Celluloid ( vlc alternative )
     Kooha ( secrean record )
     localsend_app
+    spotify
     joplin_desktop ( obsidian and logseq alternative )
     Flatseal ( flatpak manager )
     ExtensionManager ( gnome extension manager)
@@ -49,6 +50,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.gnome.Loupe
     im.fluffychat.Fluffychat
     de.haeckerfelix.Fragments
+    com.spotify.Client
     dev.deedles.Trayscale
     net.cozic.joplin_desktop
     io.ente.auth
