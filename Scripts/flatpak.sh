@@ -43,6 +43,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.telegram.desktop
     com.valvesoftware.Steam
     org.localsend.localsend_app
+    io.mrarm.mcpelauncher
     app/com.github.tchx84.Flatseal
     com.github.maoschanz.drawing
     org.prismlauncher.PrismLauncher
