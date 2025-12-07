@@ -36,7 +36,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     FRL_FLATHUB="flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
     #FLATPAK APP LIST
     FPL_REAL="--user flathub
-    org.mozilla.firefox
+    io.gitlab.librewolf-community
     com.github.rafostar.Clapper
     io.github.seadve.Kooha
     org.localsend.localsend_app
