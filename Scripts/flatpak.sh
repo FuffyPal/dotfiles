@@ -5,7 +5,7 @@ choice=$(echo "$choice" | tr '[:upper:]' '[:lower:]')
 if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
   echo "app list"
   echo "
-    firefox
+    librewolf (firefox fork)
     Celluloid ( vlc alternative )
     Kooha ( secrean record )
     localsend_app
@@ -42,7 +42,6 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.localsend.localsend_app
     app/com.github.tchx84.Flatseal
     com.github.maoschanz.drawing
-    com.vixalien.sticky
     com.mattjakeman.ExtensionManager
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
