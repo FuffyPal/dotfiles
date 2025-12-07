@@ -35,6 +35,25 @@ else
     exit 1
 fi
 
+echo "Enable vscodium repo"
+sudo tee -a /etc/yum.repos.d/vscodium.repo << 'EOF'
+[gitlab.com_paulcarroty_vscodium_repo]
+name=gitlab.com_paulcarroty_vscodium_repo
+baseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+metadata_expire=1h
+EOF
+if [ $? -eq 0 ]; then
+    echo "vscodium repo successful ... "
+else
+    echo "vscodium repo  unsuccessful !!!"
+    exit 1
+fi
+
+
 package="
 podman
 firewalld
@@ -50,7 +69,7 @@ mokutil
 openssl
 steam-devices
 bzip3
-zed
+codium
 btrfs-assistant
 git-lfs
 git
