@@ -57,6 +57,7 @@ fi
 package="
 podman
 firewalld
+discord
 firewall-config
 firewall-applet
 flatpak
