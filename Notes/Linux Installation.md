@@ -38,6 +38,7 @@
      - bzip3
    - Communication
      - discord
+     - telegram
      - fluffychat ( matrix client )
      - thunderbird
    - Creative
@@ -46,7 +47,7 @@
      - krita
      - gimp
    - General
-     - firefox
+     - librewolf ( firefox fork )
      - easyeffect
      - syncthing
      - timeshift
