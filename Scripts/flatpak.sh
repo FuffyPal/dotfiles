@@ -19,6 +19,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     mcpelauncher ( minecraft bedrock launcher )
     PrismLauncher ( minecraft java launcher )
     Steam
+    telegram
     rewaita
     airshipper ( veloren launcher )
     ente auth
@@ -39,6 +40,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     io.gitlab.librewolf-community
     com.github.rafostar.Clapper
     io.github.seadve.Kooha
+    org.telegram.desktop
     org.localsend.localsend_app
     app/com.github.tchx84.Flatseal
     com.github.maoschanz.drawing
