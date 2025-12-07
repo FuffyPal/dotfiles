@@ -48,7 +48,6 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
     io.github.swordpuffin.rewaita
-    org.gtkhash.gtkhash
     org.gnome.Loupe
     im.fluffychat.Fluffychat
     de.haeckerfelix.Fragments
