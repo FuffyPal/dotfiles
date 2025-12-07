@@ -45,6 +45,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.localsend.localsend_app
     app/com.github.tchx84.Flatseal
     com.github.maoschanz.drawing
+    org.prismlauncher.PrismLauncher
     com.mattjakeman.ExtensionManager
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
