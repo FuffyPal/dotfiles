@@ -50,7 +50,6 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.gnome.Loupe
     im.fluffychat.Fluffychat
     de.haeckerfelix.Fragments
-    dev.vencord.Vesktop
     dev.deedles.Trayscale
     net.cozic.joplin_desktop
     io.ente.auth
