@@ -53,6 +53,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     io.github.swordpuffin.rewaita
     org.gnome.Loupe
     im.fluffychat.Fluffychat
+    org.godotengine.Godot
     de.haeckerfelix.Fragments
     com.spotify.Client
     dev.deedles.Trayscale
