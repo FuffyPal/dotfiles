@@ -61,7 +61,6 @@ discord
 firewall-config
 firewall-applet
 flatpak
-ollama
 vim
 gnome-tweaks
 papirus-icon-theme
