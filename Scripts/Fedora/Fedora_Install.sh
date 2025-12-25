@@ -14,6 +14,18 @@ else
     exit 1
 fi
 
+if command -v rpm -E %fedora < 42; then
+    echo "Mullvad repo actiavetet"
+    sudo dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
+    if [ $? -eq 0 ]; then
+        echo "Mullvad repo successful ... "
+    else
+        echo "Mullvad repo  unsuccessful !!!"
+        exit 1
+fi
+
+fi
+
 echo "enable terra repo"
 sudo dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release 
 if [ $? -eq 0 ]; then
@@ -65,6 +77,8 @@ vim
 gnome-tweaks
 papirus-icon-theme
 kmodtool
+mullvad-vpn
+mullvad-browser
 akmods
 mokutil
 openssl
