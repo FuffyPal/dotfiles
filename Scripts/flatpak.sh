@@ -46,6 +46,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     io.mrarm.mcpelauncher
     app/com.github.tchx84.Flatseal
     com.github.maoschanz.drawing
+    com.bitwarden.desktop
     org.prismlauncher.PrismLauncher
     com.mattjakeman.ExtensionManager
     org.mozilla.Thunderbird
