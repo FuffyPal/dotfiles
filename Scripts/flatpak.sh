@@ -6,7 +6,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
   echo "app list"
   echo "
     librewolf (firefox fork)
-    Celluloid ( vlc alternative )
+    Clapper ( vlc alternative )
     Kooha ( secrean record )
     localsend_app
     spotify
@@ -15,14 +15,21 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     ExtensionManager ( gnome extension manager)
     Thunderbird
     easyeffects
+    Fragments ( bittorrent )
     FluffyChat
     mcpelauncher ( minecraft bedrock launcher )
     PrismLauncher ( minecraft java launcher )
     Steam
+    bitwarden ( password manager )
     telegram
     rewaita
+    drawing ( alternativ to paint )
     airshipper ( veloren launcher )
     ente auth
+    Godot ( game enginer )
+    spotify 
+    Trayscale ( tailscale gui )
+    
   "
   echo "heyy do u confirm"
   read -p "y/n " twochoice
