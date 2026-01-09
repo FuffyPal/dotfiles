@@ -15,7 +15,7 @@ else
 fi
 
 if command -v rpm -E %fedora < 42; then
-    echo "Mullvad repo actiavetet"
+    echo "Mullvad repo Enable"
     sudo dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
     if [ $? -eq 0 ]; then
         echo "Mullvad repo successful ... "
