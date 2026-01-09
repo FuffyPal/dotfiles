@@ -27,7 +27,7 @@ fi
 fi
 
 echo "enable terra repo"
-sudo dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release 
+sudo dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 if [ $? -eq 0 ]; then
     echo "terra repo successful ... "
 else
@@ -47,23 +47,23 @@ else
     exit 1
 fi
 
-echo "Enable vscodium repo"
-sudo tee -a /etc/yum.repos.d/vscodium.repo << 'EOF'
-[gitlab.com_paulcarroty_vscodium_repo]
-name=gitlab.com_paulcarroty_vscodium_repo
-baseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
-metadata_expire=1h
-EOF
-if [ $? -eq 0 ]; then
-    echo "vscodium repo successful ... "
-else
-    echo "vscodium repo  unsuccessful !!!"
-    exit 1
-fi
+# echo "Enable vscodium repo"
+# sudo tee -a /etc/yum.repos.d/vscodium.repo << 'EOF'
+# [gitlab.com_paulcarroty_vscodium_repo]
+# name=gitlab.com_paulcarroty_vscodium_repo
+# baseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/
+# enabled=1
+# gpgcheck=1
+# repo_gpgcheck=1
+# gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+# metadata_expire=1h
+# EOF
+# if [ $? -eq 0 ]; then
+    # echo "vscodium repo successful ... "
+# else
+    # echo "vscodium repo  unsuccessful !!!"
+    # exit 1
+# fi
 
 
 package="
@@ -88,6 +88,7 @@ codium
 btrfs-assistant
 git-lfs
 git
+zed
 tailscale
 rustup
 rust-analyzer
@@ -128,11 +129,11 @@ if [ $? -eq 0 ]; then
 	sudo mokutil --import /etc/pki/akmods/certs/public_key.der
 	if [ $? -eq 0 ]; then
 		echo "secure boot successfull ..."
-	else 
+	else
 		echo "secure boot unsuccessfull ... error import area"
 		exit 1
 	fi
-else 
+else
 	echo "sucre boot unseccesfull ... error generade"
 	sudo kmodgenca -a --force
 	if [ $? -eq 0 ]; then
@@ -140,11 +141,11 @@ else
 		sudo mokutil --import /etc/pki/akmods/certs/public_key.der
 		if  [ $? -eq 0 ]; then
 			echo "sucre boot successfull ... but force mod"
-		else 
+		else
 			echo "secure boot unseccessfull .. error import area"
 			exit 1
 		fi
-	else 
+	else
 		echo "secure boot unseccesfull ... error gnerade force mode"
 		exit 1
 	fi
@@ -158,7 +159,7 @@ else
     echo "system upgrade unsuccsessfull !!!"
     exit 1
 fi
- 
+
 if command -v lspci > /dev/null; then
     if lspci | grep -i nvidia > /dev/null; then
         echo "NVIDIA GPU found"
