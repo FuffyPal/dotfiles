@@ -177,29 +177,3 @@ if command -v lspci > /dev/null; then
 else
     echo "lspci command not found"
 fi
-
-cudapackage="
-cuda-toolkit-13-1
-"
-if command -v rpm -E %fedora < 42; then
-    echo "nvida cuda repo actiavetet"
-    sudo dnf config-manager addrepo --from-repofile https://developer.download.nvidia.com/compute/cuda/repos/fedora(rpm -E %fedora)/x86_64/cuda-fedora(rpm -E %fedora).repo
-    if command -v lspci > /dev/null; then
-        if lspci | grep -i nvidia > /dev/null; then
-            echo "NVIDIA cudatoolkit found"
-            echo "Installing cudatoolkit"
-            sudo dnf install -y $cudapackage
-            if [ $? -eq 0 ]; then
-                echo "NVIDIA cudatoolkit successful ... "
-            else
-                echo "NVIDIA cudatoolkit  unsuccessful !!!"
-                exit 1
-            fi
-
-        else
-            echo "Nvidia GPU not found"
-        fi
-    else
-        echo "lspci command not found"
-    fi
-fi
