@@ -19,7 +19,6 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     FluffyChat
     mcpelauncher ( minecraft bedrock launcher )
     PrismLauncher ( minecraft java launcher )
-    Steam
     bitwarden ( password manager )
     telegram
     rewaita
@@ -27,9 +26,9 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     airshipper ( veloren launcher )
     ente auth
     Godot ( game enginer )
-    spotify 
+    spotify
     Trayscale ( tailscale gui )
-    
+
   "
   echo "heyy do u confirm"
   read -p "y/n " twochoice
@@ -48,7 +47,6 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     com.github.rafostar.Clapper
     io.github.seadve.Kooha
     org.telegram.desktop
-    com.valvesoftware.Steam
     org.localsend.localsend_app
     io.mrarm.mcpelauncher
     app/com.github.tchx84.Flatseal
