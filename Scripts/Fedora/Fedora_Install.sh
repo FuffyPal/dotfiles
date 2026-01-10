@@ -82,7 +82,7 @@ mullvad-browser
 akmods
 mokutil
 openssl
-steam-devices
+steam
 bzip3
 btrfs-assistant
 git-lfs
