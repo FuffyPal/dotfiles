@@ -22,6 +22,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     bitwarden ( password manager )
     telegram
     rewaita
+    UnityHub
     drawing ( alternativ to paint )
     airshipper ( veloren launcher )
     ente auth
@@ -50,6 +51,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.localsend.localsend_app
     io.mrarm.mcpelauncher
     app/com.github.tchx84.Flatseal
+    com.unity.UnityHub
     com.github.maoschanz.drawing
     com.bitwarden.desktop
     org.prismlauncher.PrismLauncher
