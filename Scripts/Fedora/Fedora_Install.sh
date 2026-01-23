@@ -80,6 +80,7 @@ kmodtool
 mullvad-vpn
 mullvad-browser
 akmods
+godot
 mokutil
 openssl
 steam

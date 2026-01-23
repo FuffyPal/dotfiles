@@ -26,7 +26,6 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     drawing ( alternativ to paint )
     airshipper ( veloren launcher )
     ente auth
-    Godot ( game enginer )
     spotify
     Trayscale ( tailscale gui )
 
@@ -62,7 +61,6 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     net.veloren.airshipper
     org.gnome.Loupe
     im.fluffychat.Fluffychat
-    org.godotengine.Godot
     de.haeckerfelix.Fragments
     com.spotify.Client
     dev.deedles.Trayscale
