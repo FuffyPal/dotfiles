@@ -27,6 +27,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     airshipper ( veloren launcher )
     ente auth
     spotify
+    gearlever (appimage luancher alternativ)
     Trayscale ( tailscale gui )
 
   "
@@ -49,6 +50,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.telegram.desktop
     org.localsend.localsend_app
     io.mrarm.mcpelauncher
+    it.mijorus.gearlever
     app/com.github.tchx84.Flatseal
     com.unity.UnityHub
     com.github.maoschanz.drawing
