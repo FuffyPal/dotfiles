@@ -1,3 +1,0 @@
-alias up="sudo dnf update -y && flatpak update -y"
-alias cat="/bin/lolcat"
-alias helix="/bin/hx"
