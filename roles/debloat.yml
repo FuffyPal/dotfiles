@@ -28,3 +28,4 @@
     - libreoffice-*
   any_errors_fatal: true
   when: ansible_facts['distribution'] == "Fedora"
+  become: true
