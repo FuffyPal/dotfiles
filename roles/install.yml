@@ -33,11 +33,11 @@
     - cargo
     - rust-analyzer
     - golang
-    - kmod-v4l2loopback
-    - akmod-v4l2loopback
-    - v4l2loopback-utils
-    - obs-studio
-    - help2man
+    # - kmod-v4l2loopback
+    # - akmod-v4l2loopback
+    # - v4l2loopback-utils
+    # - obs-studio
+    # - help2man
     - flatpak
     - bat
     - zed
