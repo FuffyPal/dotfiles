@@ -7,3 +7,15 @@
     disable_gpg_check: true
   become: true
   when: ansible_facts['distribution'] == "Fedora"
+
+- name: Terra Repo added system
+  ansible.builtin.yum_repository:
+    name: terra
+    description: Terra Repository for Fedora
+    baseurl: "https://repos.fyralabs.com/terra{{ ansible_facts['distribution_major_version'] }}"
+    gpgcheck: false
+
+- name: terra-release package setup
+  ansible.builtin.dnf:
+    name: terra-release
+    state: present
