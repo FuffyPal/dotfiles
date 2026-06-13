@@ -6,12 +6,12 @@
     - name: hello world
       debug:
         msg: "Im ready and ..."
-    # - name: All not requements apps delete
-    #   include_tasks: roles/debloat.yml
-    # - name: Requements repo enabled
-    #   include_tasks: roles/repo.yml
-    # - name: system for requements app install
-    #   include_tasks: roles/install.yml
+    - name: All not requements apps delete
+      include_tasks: roles/debloat.yml
+    - name: Requements repo enabled
+      include_tasks: roles/repo.yml
+    - name: system for requements app install
+      include_tasks: roles/install.yml
     - name: Requements flatpak repo enabled
       include_tasks: roles/flatpak_repo.yml
     - name: user for requements app install
