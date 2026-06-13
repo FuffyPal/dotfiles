@@ -16,7 +16,6 @@
     - gnome-tweaks
     - papirus-icon-theme
     - ptyxis
-    - antigravity
     - helix
     - cargo
     - btop
@@ -40,6 +39,8 @@
     - obs-studio
     - help2man
     - flatpak
+    - bat
+    - zed
 
   any_errors_fatal: true
   when: ansible_facts['distribution'] == "Fedora"

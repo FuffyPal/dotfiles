@@ -18,7 +18,7 @@
   when: ansible_facts['distribution'] == "Fedora"
 
 - name: terra-release package setup for fedora
-  ansible.builtin.dnf:
+  dnf:
     name: terra-release
     state: present
   become: true
