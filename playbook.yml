@@ -8,3 +8,5 @@
         msg: "Im ready and ..."
     - name: All not requements apps delete
       include_tasks: roles/debloat.yml
+    - name: Requements repo enabled
+      include_tasks: roles/repo.yml
