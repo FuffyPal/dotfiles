@@ -20,12 +20,13 @@
     - loupe
     - gnome-tour
     - rhythmbox
-    - firefox
     - firefox-langpacks
+    - firefox
     - showtime
     - decibels
     - papers
     - gnome-terminal
+    - unoconv
     - libreoffice-*
   any_errors_fatal: true
   when: ansible_facts['distribution'] == "Fedora"
