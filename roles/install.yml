@@ -1,0 +1,47 @@
+- name: install for fedora
+  dnf:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - git
+    - git-lfs
+    - vim
+    - flatpak
+    - podman
+    - podman-docker
+    - podman-compose
+    - firewalld
+    - firewall-config
+    - firewall-applet
+    - gnome-tweaks
+    - papirus-icon-theme
+    - ptyxis
+    - helix
+    - cargo
+    - btop
+    - wtype
+    - fuse
+    - fuse-libs
+    - snapper
+    - python3-dnf-plugin-snapper
+    - btrfs-assistant
+    - freerdp
+    - steam
+    - gtk-layer-shell
+    - google-chrome-stable
+    - rust
+    - cargo
+    - rust-analyzer
+    - golang
+    # - kmod-v4l2loopback
+    # - akmod-v4l2loopback
+    # - v4l2loopback-utils
+    # - obs-studio
+    # - help2man
+    - flatpak
+    - bat
+    - zed
+
+  any_errors_fatal: true
+  when: ansible_facts['distribution'] == "Fedora"
+  become: true

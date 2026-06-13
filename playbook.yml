@@ -1,0 +1,30 @@
+---
+- name: Manage and Configure Workstation Dotfiles
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Print readiness message
+      ansible.builtin.debug:
+        msg: "System configuration is ready to start..."
+
+    - name: Remove unneeded and bloatware applications
+      ansible.builtin.include_tasks: roles/debloat.yml
+
+    - name: Configure and enable required repositories
+      ansible.builtin.include_tasks: roles/repo.yml
+
+    - name: Install required system packages
+      ansible.builtin.include_tasks: roles/install.yml
+
+    - name: Configure and enable Flatpak repositories
+      ansible.builtin.include_tasks: roles/flatpak_repo.yml
+
+    - name: Install required Flatpak applications
+      ansible.builtin.include_tasks: roles/flatpak_install.yml
+
+    - name: Check and configure NVIDIA drivers on Fedora
+      ansible.builtin.include_tasks: roles/nvidia.yml
+
+    - name: Manage and sync user dotfiles
+      ansible.builtin.include_tasks: roles/dotfiles.yml

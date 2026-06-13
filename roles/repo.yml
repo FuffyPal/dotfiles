@@ -1,0 +1,56 @@
+- name: Configure RPM Fusion (Free and Non-Free) repositories on Fedora
+  dnf:
+    name:
+      - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
+      - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
+    state: present
+    disable_gpg_check: true
+  become: true
+  when: ansible_facts['distribution'] == "Fedora"
+
+- name: Add Terra repository on Fedora
+  ansible.builtin.yum_repository:
+    name: terra
+    description: Terra Repository for Fedora
+    baseurl: "https://repos.fyralabs.com/terra{{ ansible_facts['distribution_major_version'] }}"
+    gpgcheck: false
+  become: true
+  when: ansible_facts['distribution'] == "Fedora"
+
+- name: Add NVIDIA Container Toolkit repository on Fedora
+  ansible.builtin.yum_repository:
+    name: nvidia-container-toolkit
+    description: Nvidia container toolkit Repository for Fedora
+    baseurl: "https://nvidia.github.io/libnvidia-container/stable/rpm/$basearch"
+    gpgcheck: true
+    gpgkey: https://nvidia.github.io/libnvidia-container/gpgkey
+  become: true
+  when: ansible_facts['distribution'] == "Fedora"
+
+- name: Install terra-release package on Fedora
+  dnf:
+    name: terra-release
+    state: present
+  become: true
+  when: ansible_facts['distribution'] == "Fedora"
+
+- name: Add Antigravity RPM repository on Fedora
+  ansible.builtin.yum_repository:
+    name: antigravity-rpm
+    description: Antigravity RPM Repository
+    baseurl: https://us-central1-yum.pkg.dev/projects/antigravity-auto-updater-dev/antigravity-rpm
+    enabled: true
+    gpgcheck: false
+  become: true
+  when: ansible_facts['distribution'] == "Fedora"
+
+- name: Add VS Code RPM repository on Fedora
+  ansible.builtin.yum_repository:
+    name: Visual-Studio-Code
+    description: VScode RPM Repository
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    enabled: true
+    gpgcheck: true
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+  become: true
+  when: ansible_facts['distribution'] == "Fedora"

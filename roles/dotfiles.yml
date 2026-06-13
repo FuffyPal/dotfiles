@@ -1,0 +1,31 @@
+- name: Copy system configuration files
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: "0644"
+  become: true
+  with_items:
+    - { src: "system/dnf/dnf.conf", dest: "/etc/dnf/dnf.conf" }
+    - {
+        src: "system/systemd-resolve/resolved.conf",
+        dest: "/etc/systemd/resolved.conf",
+      }
+
+- name: Ensure target config directories exist
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.config/helix"
+    state: directory
+    mode: "0755"
+
+- name: Copy user home dotfiles
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ ansible_facts['user_dir'] }}/{{ item.dest }}"
+    mode: "0644"
+  with_items:
+    - { src: "home/bash/.bashrc", dest: ".bashrc" }
+    - { src: "home/vim/.vimrc", dest: ".vimrc" }
+    - { src: "home/git/.gitconfig", dest: ".gitconfig" }
+    - { src: "home/helix/config.toml", dest: ".config/helix/config.toml" }
