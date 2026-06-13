@@ -36,7 +36,7 @@
 
 - name: VScode RPM repo added for fedora
   ansible.builtin.yum_repository:
-    name: Visual Studio Code
+    name: Visual-Studio-Code
     description: VScode RPM Repository
     baseurl: https://packages.microsoft.com/yumrepos/vscode
     enabled: true
