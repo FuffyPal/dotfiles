@@ -8,7 +8,7 @@
   become: true
   when: ansible_facts['distribution'] == "Fedora"
 
-- name: Terra Repo added system
+- name: Terra Repo added system for fedora
   ansible.builtin.yum_repository:
     name: terra
     description: Terra Repository for Fedora
@@ -17,9 +17,30 @@
   become: true
   when: ansible_facts['distribution'] == "Fedora"
 
-- name: terra-release package setup
+- name: terra-release package setup for fedora
   ansible.builtin.dnf:
     name: terra-release
     state: present
+  become: true
+  when: ansible_facts['distribution'] == "Fedora"
+
+- name: Antigravity RPM repo added for fedora
+  ansible.builtin.yum_repository:
+    name: antigravity-rpm
+    description: Antigravity RPM Repository
+    baseurl: https://us-central1-yum.pkg.dev/projects/antigravity-auto-updater-dev/antigravity-rpm
+    enabled: true
+    gpgcheck: false
+  become: true
+  when: ansible_facts['distribution'] == "Fedora"
+
+- name: VScode RPM repo added for fedora
+  ansible.builtin.yum_repository:
+    name: Visual Studio Code
+    description: VScode RPM Repository
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    enabled: true
+    gpgcheck: true
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
   become: true
   when: ansible_facts['distribution'] == "Fedora"
