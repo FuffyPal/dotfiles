@@ -10,3 +10,5 @@
       include_tasks: roles/debloat.yml
     - name: Requements repo enabled
       include_tasks: roles/repo.yml
+    - name: system for requements app install
+      include_tasks: roles/install.yml
