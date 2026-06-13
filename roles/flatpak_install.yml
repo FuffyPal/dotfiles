@@ -1,0 +1,30 @@
+- name: flatpak app install
+  flatpak:
+    name: "{{ item }}"
+    state: present
+    remote: flathub
+    method: user
+  loop:
+    - com.usebottles.bottles
+    - com.github.rafostar.Clapper
+    - io.gitlab.theevilskeleton.Upscaler
+    - org.localsend.localsend_app
+    - org.mozilla.thunderbird
+    - io.podman_desktop.PodmanDesktop
+    - io.gitlab.librewolf-community
+    - com.github.tchx84.Flatseal
+    - com.github.wwmm.easyeffects
+    - org.torproject.torbrowser-launcher
+    - org.gnome.Loupe
+    - io.ente.auth
+    - dev.deedles.Trayscale
+    - org.gnome.seahorse.Application
+    - org.cockpit_project.CockpitClient
+    - io.github.giantpinkrobots.varia
+    - org.prismlauncher.PrismLauncher
+    - org.vinegarhq.Sober
+    - dev.vencord.Vesktop
+    - com.mattjakeman.ExtensionManager
+
+  any_errors_fatal: true
+  become: false

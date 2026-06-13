@@ -1,0 +1,7 @@
+- name: Flathub Repo add
+  flatpak_remote:
+    name: flathub
+    state: present
+    method: user
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+  become: false
