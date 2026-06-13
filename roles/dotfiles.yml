@@ -16,10 +16,10 @@
 - name: Copy user home dotfiles
   ansible.builtin.copy:
     src: "{{ item.src }}"
-    dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
+    dest: "{{ ansible_facts['user_dir'] }}/{{ item.dest }}"
     mode: "0644"
   with_items:
-    - { src: "home/bash/bashrc", dest: ".bashrc" }
-    - { src: "home/vim/vimrc", dest: ".vimrc" }
-    - { src: "home/git/gitconfig", dest: ".gitconfig" }
+    - { src: "home/bash/.bashrc", dest: ".bashrc" }
+    - { src: "home/vim/.vimrc", dest: ".vimrc" }
+    - { src: "home/git/.gitconfig", dest: ".gitconfig" }
     - { src: "home/helix/config.toml", dest: ".config/helix/config.toml" }
