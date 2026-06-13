@@ -1,4 +1,4 @@
-- name: RPM Fusion (Free ve Non-Free) Repo setup andd enabled for fedora
+- name: Configure RPM Fusion (Free and Non-Free) repositories on Fedora
   dnf:
     name:
       - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
@@ -8,7 +8,7 @@
   become: true
   when: ansible_facts['distribution'] == "Fedora"
 
-- name: Terra Repo added system for fedora
+- name: Add Terra repository on Fedora
   ansible.builtin.yum_repository:
     name: terra
     description: Terra Repository for Fedora
@@ -17,7 +17,7 @@
   become: true
   when: ansible_facts['distribution'] == "Fedora"
 
-- name: Nvidia container toolkit Repo added system for fedora
+- name: Add NVIDIA Container Toolkit repository on Fedora
   ansible.builtin.yum_repository:
     name: nvidia-container-toolkit
     description: Nvidia container toolkit Repository for Fedora
@@ -27,14 +27,14 @@
   become: true
   when: ansible_facts['distribution'] == "Fedora"
 
-- name: terra-release package setup for fedora
+- name: Install terra-release package on Fedora
   dnf:
     name: terra-release
     state: present
   become: true
   when: ansible_facts['distribution'] == "Fedora"
 
-- name: Antigravity RPM repo added for fedora
+- name: Add Antigravity RPM repository on Fedora
   ansible.builtin.yum_repository:
     name: antigravity-rpm
     description: Antigravity RPM Repository
@@ -44,7 +44,7 @@
   become: true
   when: ansible_facts['distribution'] == "Fedora"
 
-- name: VScode RPM repo added for fedora
+- name: Add VS Code RPM repository on Fedora
   ansible.builtin.yum_repository:
     name: Visual-Studio-Code
     description: VScode RPM Repository

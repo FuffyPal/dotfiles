@@ -1,10 +1,10 @@
-- name: Check the system nvidia control
+- name: Check for NVIDIA hardware presence
   ansible.builtin.shell: "lspci | grep -i nvidia"
   register: nvidia_check
   failed_when: false
   changed_when: false
 
-- name: if true nvidia setup on fedora
+- name: Install NVIDIA drivers and container tools on Fedora
   dnf:
     name: "{{ item }}"
     state: present

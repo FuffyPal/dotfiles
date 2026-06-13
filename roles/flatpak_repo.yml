@@ -1,4 +1,4 @@
-- name: Flathub Repo add
+- name: Add Flathub Repo
   flatpak_remote:
     name: flathub
     state: present

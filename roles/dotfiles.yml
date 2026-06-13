@@ -1,0 +1,25 @@
+- name: Copy system configuration files
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: "0644"
+  become: true
+  with_items:
+    - { src: "system/dnf/dnf.conf", dest: "/etc/dnf/dnf.conf" }
+    - {
+        src: "system/systemd-resolve/resolved.conf",
+        dest: "/etc/systemd/resolved.conf",
+      }
+
+- name: Copy user home dotfiles
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
+    mode: "0644"
+  with_items:
+    - { src: "home/bash/bashrc", dest: ".bashrc" }
+    - { src: "home/vim/vimrc", dest: ".vimrc" }
+    - { src: "home/git/gitconfig", dest: ".gitconfig" }
+    - { src: "home/helix/config.toml", dest: ".config/helix/config.toml" }
