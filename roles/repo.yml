@@ -14,8 +14,12 @@
     description: Terra Repository for Fedora
     baseurl: "https://repos.fyralabs.com/terra{{ ansible_facts['distribution_major_version'] }}"
     gpgcheck: false
+  become: true
+  when: ansible_facts['distribution'] == "Fedora"
 
 - name: terra-release package setup
   ansible.builtin.dnf:
     name: terra-release
     state: present
+  become: true
+  when: ansible_facts['distribution'] == "Fedora"
