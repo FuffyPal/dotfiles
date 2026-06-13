@@ -30,6 +30,6 @@
     - gnome-terminal
     - unoconv
     - libreoffice-*
-  any_errors_fatal: true
+  ignore_errors: true
   when: ansible_facts['distribution'] == "Fedora"
   become: true
