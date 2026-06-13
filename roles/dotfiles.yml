@@ -13,6 +13,12 @@
         dest: "/etc/systemd/resolved.conf",
       }
 
+- name: Ensure target config directories exist
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.config/helix"
+    state: directory
+    mode: "0755"
+
 - name: Copy user home dotfiles
   ansible.builtin.copy:
     src: "{{ item.src }}"
