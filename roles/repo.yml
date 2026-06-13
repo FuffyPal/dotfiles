@@ -17,6 +17,16 @@
   become: true
   when: ansible_facts['distribution'] == "Fedora"
 
+- name: Nvidia container toolkit Repo added system for fedora
+  ansible.builtin.yum_repository:
+    name: nvidia-container-toolkit
+    description: Nvidia container toolkit Repository for Fedora
+    baseurl: "https://nvidia.github.io/libnvidia-container/stable/rpm/$basearch"
+    gpgcheck: true
+    gpgkey: https://nvidia.github.io/libnvidia-container/gpgkey
+  become: true
+  when: ansible_facts['distribution'] == "Fedora"
+
 - name: terra-release package setup for fedora
   dnf:
     name: terra-release

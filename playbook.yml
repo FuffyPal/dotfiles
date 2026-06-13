@@ -16,3 +16,5 @@
       include_tasks: roles/flatpak_repo.yml
     - name: user for requements app install
       include_tasks: roles/flatpak_install.yml
+    - name: nvida check and setup on fedora
+      include_tasks: roles/nvidia.yml

@@ -1,0 +1,27 @@
+- name: Check the system nvidia control
+  ansible.builtin.shell: "lspci | grep -i nvidia"
+  register: nvidia_check
+  failed_when: false
+  changed_when: false
+
+- name: if true nvidia setup on fedora
+  dnf:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - akmod-nvidia-open
+    - xorg-x11-drv-nvidia-cuda
+    - vulkan
+    - xorg-x11-drv-nvidia-cuda-libs
+    - libva-nvidia-driver
+    - libva-utils
+    - vdpauinfo
+    - nvidia-container-toolkit-1.19.1-1
+    - nvidia-container-toolkit-base-1.19.1-1
+    - libnvidia-container-tools-1.19.1-1
+    - libnvidia-container1-1.19.1-1
+  any_errors_fatal: true
+  become: true
+  when:
+    - ansible_facts['distribution'] == "Fedora"
+    - nvidia_check.rc == 0
