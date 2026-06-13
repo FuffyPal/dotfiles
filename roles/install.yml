@@ -33,7 +33,6 @@
     - cargo
     - rust-analyzer
     - golang
-    - eza
     # - kmod-v4l2loopback
     # - akmod-v4l2loopback
     # - v4l2loopback-utils

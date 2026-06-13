@@ -23,11 +23,10 @@ elif [ -f /etc/bash_completion ]; then
 fi
 
 # ─── Aliases ───────────────────────────────────────────────────────────────────
-alias ls="eza --icons=always --color=always --group-directories-first"
-alias eza="eza --icons=always --color=always --group-directories-first"
-alias l="eza --icons=always --color=always --group-directories-first"
-alias ll="eza -lh --icons=always --color=always --group-directories-first"
-alias la="eza -lha --icons=always --color=always --group-directories-first"
+alias ls="ls --color=auto"
+alias l="ls --color=auto"
+alias ll="ls -lh --color=auto"
+alias la="ls -lha --color=auto"
 alias grep="grep --color=auto"
 alias helix="/bin/hx"
 alias hx="/bin/hx"
