@@ -1,0 +1,10 @@
+- name: Dotfiles
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: hello world
+      debug:
+        msg: "Im ready and ..."
+    - name: All not requements apps delete
+      include_tasks: roles/debloat.yml
