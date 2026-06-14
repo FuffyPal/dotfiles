@@ -1,6 +1,6 @@
----
+
 - name: Manage and Configure Workstation Dotfiles
-  hosts: localhost
+  hosts: Desktop
 
   tasks:
     - name: Print readiness message
