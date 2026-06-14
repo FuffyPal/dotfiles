@@ -1,4 +1,3 @@
-
 - name: Manage and Configure Workstation Dotfiles
   hosts: Desktop
 
@@ -27,6 +26,9 @@
 
     - name: Manage and sync user dotfiles
       ansible.builtin.include_tasks: roles/dotfiles.yml
+      when:
+        - ansible_facts['distribution'] == "Fedora"
+        - ansible_facts['hostname'] == "cutie"
 
     - name: Enable systemd services
       ansible.builtin.include_tasks: roles/systemd.yml

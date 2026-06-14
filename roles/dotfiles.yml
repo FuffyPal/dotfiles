@@ -29,3 +29,12 @@
     - { src: "home/vim/.vimrc", dest: ".vimrc" }
     - { src: "home/git/.gitconfig", dest: ".gitconfig" }
     - { src: "home/helix/config.toml", dest: ".config/helix/config.toml" }
+
+- name: Settings the background for gnome
+  ansible.builtin.command: "{{ item }}"
+  loop:
+    - "gsettings set org.gnome.desktop.screensaver picture-uri file:///'{{ ansible_facts.env.PWD }}/assets/wallpaper/Wallpaper_2.png'"
+    - "gsettings set org.gnome.desktop.background picture-uri file:///'{{ ansible_facts.env.PWD }}/assets/wallpaper/Wallpaper_2.png'"
+    - "gsettings set org.gnome.desktop.background picture-uri-dark file:///'{{ ansible_facts.env.PWD }}/assets/wallpaper/Wallpaper_2.png'"
+  when:
+    - ansible_facts['env']['XDG_CURRENT_DESKTOP'] == "GNOME"
