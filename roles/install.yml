@@ -39,6 +39,7 @@
       - bat
       - zed
       - ansible
+      - ansible-lint
     state: present
 
   any_errors_fatal: true
