@@ -37,6 +37,8 @@
 
     - name: enable ssh key
       ansible.builtin.include_tasks: roles/ssh_keys.yml
+      when: ansible_facts['hostname'] == "cutie"
 
     - name: enable GPG keys
       ansible.builtin.include_tasks: roles/gpg_keys.yml
+      when: ansible_facts['hostname'] == "cutie"
