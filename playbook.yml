@@ -28,3 +28,6 @@
 
     - name: Manage and sync user dotfiles
       ansible.builtin.include_tasks: roles/dotfiles.yml
+
+    - name: Enable systemd services
+      ansible.builtin.include_tasks: roles/systemd.yml
