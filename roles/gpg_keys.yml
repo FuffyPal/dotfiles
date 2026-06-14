@@ -1,0 +1,21 @@
+- name: Fix .gnupg directory permissions
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.gnupg"
+    state: directory
+    mode: "0700"
+
+- name: Write GPG private key to temp file
+  ansible.builtin.copy:
+    content: "{{ gpg_private_key }}"
+    dest: "/tmp/gpg_private_key.asc"
+    mode: "0600"
+
+- name: Import GPG private key
+  ansible.builtin.command:
+    cmd: gpg --batch --import /tmp/gpg_private_key.asc
+  failed_when: false
+
+- name: Remove temp GPG key file
+  ansible.builtin.file:
+    path: "/tmp/gpg_private_key.asc"
+    state: absent

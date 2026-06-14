@@ -1,5 +1,7 @@
 - name: Manage and Configure Workstation Dotfiles
   hosts: Desktop
+  vars_files:
+    - vars/secrets.yml
 
   tasks:
     - name: Print readiness message
@@ -32,3 +34,9 @@
 
     - name: Enable systemd services
       ansible.builtin.include_tasks: roles/systemd.yml
+
+    - name: enable ssh key
+      ansible.builtin.include_tasks: roles/ssh_keys.yml
+
+    - name: enable GPG keys
+      ansible.builtin.include_tasks: roles/gpg_keys.yml
