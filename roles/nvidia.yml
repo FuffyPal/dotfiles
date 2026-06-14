@@ -6,20 +6,19 @@
 
 - name: Install NVIDIA drivers and container tools on Fedora
   dnf:
-    name: "{{ item }}"
+    name:
+      - akmod-nvidia-open
+      - xorg-x11-drv-nvidia-cuda
+      - vulkan
+      - xorg-x11-drv-nvidia-cuda-libs
+      - libva-nvidia-driver
+      - libva-utils
+      - vdpauinfo
+      - nvidia-container-toolkit-1.19.1-1
+      - nvidia-container-toolkit-base-1.19.1-1
+      - libnvidia-container-tools-1.19.1-1
+      - libnvidia-container1-1.19.1-1
     state: present
-  loop:
-    - akmod-nvidia-open
-    - xorg-x11-drv-nvidia-cuda
-    - vulkan
-    - xorg-x11-drv-nvidia-cuda-libs
-    - libva-nvidia-driver
-    - libva-utils
-    - vdpauinfo
-    - nvidia-container-toolkit-1.19.1-1
-    - nvidia-container-toolkit-base-1.19.1-1
-    - libnvidia-container-tools-1.19.1-1
-    - libnvidia-container1-1.19.1-1
   any_errors_fatal: true
   become: true
   when:
