@@ -54,3 +54,14 @@
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
   become: true
   when: ansible_facts['distribution'] == "Fedora"
+
+- name: Add google chrome RPM repository on Fedora
+  ansible.builtin.yum_repository:
+    name: google-chrome
+    description: google chrome RPM Repository
+    baseurl: https://dl.google.com/linux/chrome/rpm/stable/x86_64
+    enabled: true
+    gpgcheck: true
+    gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+  become: true
+  when: ansible_facts['distribution'] == "Fedora"
