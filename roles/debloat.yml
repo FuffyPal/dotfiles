@@ -30,5 +30,7 @@
       - libreoffice-*
     state: absent
   any_errors_fatal: true
-  when: ansible_facts['distribution'] == "Fedora"
+  when:
+    - ansible_facts['distribution'] == "Fedora"
+    - ansible_facts['hostname'] == "cutie"
   become: true
