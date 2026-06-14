@@ -1,3 +1,14 @@
+- name: chack the flatpak
+  ansible.builtin.command: which flatpak
+  register: flatpak_check
+  ignore_errors: true
+  changed_when: false
+
+- name: flatpak setup
+  package:
+    name: flatpak
+  when: flatpak_check.rc != 0
+
 - name: Add Flathub Repo
   flatpak_remote:
     name: flathub
