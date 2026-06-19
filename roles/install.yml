@@ -42,6 +42,7 @@
       - ansible-lint
       - tailscale
       - conda
+      - blender
     state: present
 
   any_errors_fatal: true
