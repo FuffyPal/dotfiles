@@ -44,6 +44,18 @@
   become: true
   when: ansible_facts['distribution'] == "Fedora"
 
+- name: Add Pal repository on Fedora
+  ansible.builtin.yum_repository:
+    name: pal-repository
+    description: Pal RPM Repository
+    baseurl: https://repository.fluffypal.me
+    enabled: true
+    gpgcheck: false
+  become: true
+  when: 
+    - ansible_facts['distribution'] == "Fedora"
+    - ansible_facts['hostname'] == "cutie"
+  
 - name: Add VS Code RPM repository on Fedora
   ansible.builtin.yum_repository:
     name: Visual-Studio-Code
