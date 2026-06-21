@@ -26,4 +26,6 @@
     method: user
 
   any_errors_fatal: true
+  when:
+    - ansible_facts['hostname'] == "cutie"
   become: false

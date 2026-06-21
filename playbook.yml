@@ -1,5 +1,7 @@
+---
+
 - name: Manage and Configure Workstation Dotfiles
-  hosts: Desktop
+  hosts: all
   vars_files:
     - vars/secrets.yml
 
@@ -10,35 +12,47 @@
 
     - name: Remove unneeded and bloatware applications
       ansible.builtin.include_tasks: roles/debloat.yml
+      when: inventory_hostname in groups['Desktop']
 
     - name: Configure and enable required repositories
       ansible.builtin.include_tasks: roles/repo.yml
+      when: inventory_hostname in groups['Desktop']
 
     - name: Install required system packages
       ansible.builtin.include_tasks: roles/install.yml
+      when: inventory_hostname in groups['Desktop']
 
     - name: Configure and enable Flatpak repositories
       ansible.builtin.include_tasks: roles/flatpak_repo.yml
+      when: inventory_hostname in groups['Desktop']
 
     - name: Install required Flatpak applications
       ansible.builtin.include_tasks: roles/flatpak_install.yml
+      when: inventory_hostname in groups['Desktop']
 
     - name: Check and configure NVIDIA drivers on Fedora
       ansible.builtin.include_tasks: roles/nvidia.yml
+      when: inventory_hostname in groups['Desktop']
 
     - name: Manage and sync user dotfiles
       ansible.builtin.include_tasks: roles/dotfiles.yml
       when:
+        - inventory_hostname in groups['Desktop']
         - ansible_facts['distribution'] == "Fedora"
         - ansible_facts['hostname'] == "cutie"
 
     - name: Enable systemd services
       ansible.builtin.include_tasks: roles/systemd.yml
+      when: inventory_hostname in groups['Desktop']
 
     - name: enable ssh key
       ansible.builtin.include_tasks: roles/ssh_keys.yml
-      when: ansible_facts['hostname'] == "cutie"
+      when: 
+        - inventory_hostname in groups['Desktop']
+        - ansible_facts['hostname'] == "cutie"
 
     - name: enable GPG keys
       ansible.builtin.include_tasks: roles/gpg_keys.yml
-      when: ansible_facts['hostname'] == "cutie"
+      when: 
+        - inventory_hostname in groups['Desktop']
+        - ansible_facts['hostname'] == "cutie"
