@@ -1,3 +1,5 @@
+---
+
 - name: install for cutie {fedora}
   dnf:
     name:
@@ -19,6 +21,7 @@
       - btop
       - wtype
       - fuse
+      - "@virtualization"
       - fuse-libs
       - snapper
       - python3-dnf-plugin-snapper

@@ -1,3 +1,5 @@
+---
+
 - name: Fix .gnupg directory permissions
   ansible.builtin.file:
     path: "{{ ansible_facts['user_dir'] }}/.gnupg"

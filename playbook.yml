@@ -13,38 +13,48 @@
     - name: Remove unneeded and bloatware applications
       ansible.builtin.include_tasks: roles/debloat.yml
       when: inventory_hostname in groups['Desktop']
+      tags: debloat
 
     - name: Configure and enable required repositories
       ansible.builtin.include_tasks: roles/repo.yml
+      tags: repo
 
     - name: Install required system packages
       ansible.builtin.include_tasks: roles/install.yml
+      tags: install
 
     - name: Configure and enable Flatpak repositories
       ansible.builtin.include_tasks: roles/flatpak_repo.yml
       when: inventory_hostname in groups['Desktop']
+      tags: flatpak-repo
 
     - name: Install required Flatpak applications
       ansible.builtin.include_tasks: roles/flatpak_install.yml
       when: inventory_hostname in groups['Desktop']
+      tags: flatpak-install
 
     - name: Check and configure NVIDIA drivers on Fedora
       ansible.builtin.include_tasks: roles/nvidia.yml
+      tags: nvidia
 
     - name: Manage and sync user dotfiles
       ansible.builtin.include_tasks: roles/dotfiles.yml
+      tags: dotfiles
 
     - name: Enable systemd services
       ansible.builtin.include_tasks: roles/systemd.yml
+      tags: systemd
 
     - name: enable ssh key
       ansible.builtin.include_tasks: roles/ssh_keys.yml
       when: 
         - inventory_hostname in groups['Desktop']
         - ansible_facts['hostname'] == "cutie"
+      tags: ssh
 
     - name: enable GPG keys
       ansible.builtin.include_tasks: roles/gpg_keys.yml
       when: 
         - inventory_hostname in groups['Desktop']
         - ansible_facts['hostname'] == "cutie"
+      tags: gpg

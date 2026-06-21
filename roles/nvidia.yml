@@ -1,3 +1,5 @@
+---
+
 - name: Check for NVIDIA hardware presence
   ansible.builtin.shell: "lspci | grep -i nvidia"
   register: nvidia_check

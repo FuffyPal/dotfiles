@@ -1,3 +1,5 @@
+---
+
 - name: flatpak app install
   flatpak:
     name:

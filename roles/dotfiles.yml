@@ -1,3 +1,5 @@
+---
+
 - name: Copy system configuration files
   ansible.builtin.copy:
     src: "{{ item.src }}"

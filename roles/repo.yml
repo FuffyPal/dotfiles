@@ -1,3 +1,5 @@
+---
+
 - name: Configure RPM Fusion (Free and Non-Free) repositories on Fedora
   dnf:
     name:

@@ -1,3 +1,5 @@
+---
+
 - name: chack the flatpak
   ansible.builtin.command: which flatpak
   register: flatpak_check
