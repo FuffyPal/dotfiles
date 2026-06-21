@@ -1,4 +1,4 @@
-- name: install for fedora
+- name: install for cutie {fedora}
   dnf:
     name:
       - git
@@ -51,7 +51,7 @@
     - ansible_facts['hostname'] == "cutie"
   become: true
 
-- name: install for fedora
+- name: install for violet-1 (server{fedora})
   dnf:
     name:
       - git
