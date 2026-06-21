@@ -50,3 +50,25 @@
     - ansible_facts['distribution'] == "Fedora"
     - ansible_facts['hostname'] == "cutie"
   become: true
+
+- name: install for fedora
+  dnf:
+    name:
+      - git
+      - git-lfs
+      - podman
+      - podman-docker
+      - podman-compose
+      - firewalld
+      - helix
+      - snapper
+      - python3-dnf-plugin-snapper
+      - tailscale
+
+    state: present
+
+  any_errors_fatal: true
+  when:
+    - ansible_facts['distribution'] == "Fedora"
+    - ansible_facts['hostname'] == "violet-1"
+  become: true

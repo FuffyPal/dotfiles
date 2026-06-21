@@ -12,6 +12,10 @@
         src: "system/systemd-resolve/resolved.conf",
         dest: "/etc/systemd/resolved.conf",
       }
+  when:
+    - inventory_hostname in groups['Desktop']
+    - ansible_facts['distribution'] == "Fedora"
+    - ansible_facts['hostname'] == "cutie"
 
 - name: Ensure target config directories exist
   ansible.builtin.file:
@@ -38,3 +42,6 @@
     - "gsettings set org.gnome.desktop.background picture-uri-dark file:///'{{ ansible_facts.env.PWD }}/assets/wallpaper/Wallpaper_2.png'"
   when:
     - ansible_facts['env']['XDG_CURRENT_DESKTOP'] == "GNOME"
+    - inventory_hostname in groups['Desktop']
+    - ansible_facts['distribution'] == "Fedora"
+    - ansible_facts['hostname'] == "cutie"

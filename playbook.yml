@@ -16,11 +16,9 @@
 
     - name: Configure and enable required repositories
       ansible.builtin.include_tasks: roles/repo.yml
-      when: inventory_hostname in groups['Desktop']
 
     - name: Install required system packages
       ansible.builtin.include_tasks: roles/install.yml
-      when: inventory_hostname in groups['Desktop']
 
     - name: Configure and enable Flatpak repositories
       ansible.builtin.include_tasks: roles/flatpak_repo.yml
@@ -36,14 +34,9 @@
 
     - name: Manage and sync user dotfiles
       ansible.builtin.include_tasks: roles/dotfiles.yml
-      when:
-        - inventory_hostname in groups['Desktop']
-        - ansible_facts['distribution'] == "Fedora"
-        - ansible_facts['hostname'] == "cutie"
 
     - name: Enable systemd services
       ansible.builtin.include_tasks: roles/systemd.yml
-      when: inventory_hostname in groups['Desktop']
 
     - name: enable ssh key
       ansible.builtin.include_tasks: roles/ssh_keys.yml
