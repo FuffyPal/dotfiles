@@ -40,12 +40,10 @@
       # - obs-studio
       # - help2man
       - bat
-      - zed
       - ansible
       - ansible-lint
       - tailscale
       - conda
-      - blender
     state: present
 
   any_errors_fatal: true
@@ -67,6 +65,7 @@
       - snapper
       - python3-dnf-plugin-snapper
       - tailscale
+      - code
 
     state: present
 
