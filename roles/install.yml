@@ -44,6 +44,7 @@
       - ansible-lint
       - tailscale
       - conda
+      - code
     state: present
 
   any_errors_fatal: true
@@ -65,7 +66,7 @@
       - snapper
       - python3-dnf-plugin-snapper
       - tailscale
-      - code
+
 
     state: present
 
