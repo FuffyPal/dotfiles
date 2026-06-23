@@ -23,6 +23,7 @@
       - org.vinegarhq.Sober
       - dev.vencord.Vesktop
       - com.mattjakeman.ExtensionManager
+      - org.kde.krita
     state: present
     remote: flathub
     method: user
