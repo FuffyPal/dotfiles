@@ -66,6 +66,10 @@ gpg_private_key: |
   -----BEGIN PGP PRIVATE KEY BLOCK-----
   ...
   -----END PGP PRIVATE KEY BLOCK-----
+
+violet_one_tailscale_key: "tskey-auth-bla bla bla"
+
+cutie_tailscale_key: "tskey-auth-bla bla bla"
 ```
 
 ---
