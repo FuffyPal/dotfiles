@@ -16,3 +16,19 @@
     - { source: '^(\s*)-\s*\./linkstack/docker-compose\.yml' , target: '\1# - ./linkstack/docker-compose.yml' }
     - { source: '^(\s*)-\s*\./tailscale/docker-compose\.yml' , target: '\1# - ./tailscale/docker-compose.yml' }
     - { source: '^(\s*)-\s*\./mattermost/docker-compose\.yml' , target: '\1# - ./mattermost/docker-compose.yml' }
+
+- name: enable podman-restart user service
+  ansible.builtin.systemd:
+    name: podman-restart.service
+    scope: user
+    enabled: true
+    state: started
+
+- name: check linger status
+  ansible.builtin.command: loginctl show-user {{ ansible_facts.user_id }} -p Linger --value
+  register: linger_status
+
+- name: enable linger
+  ansible.builtin.command: loginctl enable-linger {{ ansible_facts.user_id }}
+  become: true
+  when: linger_status.stdout != "yes"

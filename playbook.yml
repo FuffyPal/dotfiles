@@ -35,7 +35,7 @@
 
     - name: Check and configure NVIDIA drivers on Fedora
       ansible.builtin.include_tasks: roles/nvidia.yml
-      tags: nvidia
+      tags: Nvidia
 
     - name: Manage and sync user dotfiles
       ansible.builtin.include_tasks: roles/dotfiles.yml
