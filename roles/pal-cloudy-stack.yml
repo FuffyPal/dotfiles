@@ -1,0 +1,18 @@
+---
+
+- name: install pal-cloudy-stack with git
+  ansible.builtin.git:
+    repo: https://gitlab.com/FluffyPal/pal-clouddyy-stack.git
+    dest: "{{ ansible_facts['env']['HOME'] }}/pal-clouddyy-stack"
+
+- name: Remove unnecessary services in docker-compose.yml
+  ansible.builtin.replace:
+    path: "{{ ansible_facts['env']['HOME'] }}/pal-clouddyy-stack/docker-compose.yml"
+    regexp: '{{ item.source }}'
+    replace: '{{ item.target }}'
+  loop:
+    - { source: '^(\s*)-\s*\./nextcloud/docker-compose\.yml' , target: '\1# - ./nextcloud/docker-compose.yml'}
+    - { source: '^(\s*)-\s*\./palisch/docker-compose\.yml' , target: '\1# - ./palisch/docker-compose.yml' }
+    - { source: '^(\s*)-\s*\./linkstack/docker-compose\.yml' , target: '\1# - ./linkstack/docker-compose.yml' }
+    - { source: '^(\s*)-\s*\./tailscale/docker-compose\.yml' , target: '\1# - ./tailscale/docker-compose.yml' }
+    - { source: '^(\s*)-\s*\./mattermost/docker-compose\.yml' , target: '\1# - ./mattermost/docker-compose.yml' }

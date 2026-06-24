@@ -45,6 +45,11 @@
       ansible.builtin.include_tasks: roles/systemd.yml
       tags: systemd
 
+    - name: Enable pal cloudy stack
+      ansible.builtin.include_tasks: roles/pal-cloudy-stack.yml
+      tags: stack
+      when: inventory_hostname in groups['Server']
+
     - name: enable ssh key
       ansible.builtin.include_tasks: roles/ssh_keys.yml
       when: 
