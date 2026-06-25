@@ -61,6 +61,7 @@ alias comfyui-stop="podman stop comfyui"
 
 # ─── Paths ─────────────────────────────────────────────────────────────────────
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # ─── Editor ────────────────────────────────────────────────────────────────────
 export EDITOR="hx"
