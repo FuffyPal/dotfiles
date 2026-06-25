@@ -30,9 +30,7 @@
       - steam
       - gtk-layer-shell
       - google-chrome-stable
-      - rust
-      - cargo
-      - rust-analyzer
+      - rustuo
       - golang
       # - kmod-v4l2loopback
       # - akmod-v4l2loopback
@@ -52,6 +50,11 @@
     - ansible_facts['distribution'] == "Fedora"
     - ansible_facts['hostname'] == "cutie"
   become: true
+
+- name: install rust lang~ for cutie (Desktop)
+  ansible.builtin.command: "rustup-init --profile default --default-toolchain stable --default-host x86_64-unknown-linux-gnu -y"
+  when:
+    - ansible_facts['hostname'] == "cutie"
 
 - name: install for violet-1 (server{fedora})
   dnf:
