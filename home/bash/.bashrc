@@ -55,7 +55,7 @@ alias comfyui="podman run -d \
   --device nvidia.com/gpu=all \
   --security-opt=label=disable \
   --rm \
-  registry.gitlab.com/fluffypal/comfyui-docker:latest"
+  docker.io/littleai/comfyui:latest:latest"
 alias comfyui-status="podman logs -f comfyui"
 alias comfyui-stop="podman stop comfyui"
 
