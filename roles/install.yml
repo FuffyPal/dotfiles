@@ -68,10 +68,7 @@
       - snapper
       - python3-dnf-plugin-snapper
       - tailscale
-      # - prometheus
       # - node-exporter
-      # - grafana
-      # - grafana-selinux
 
     state: present
 
