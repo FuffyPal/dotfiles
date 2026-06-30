@@ -71,6 +71,16 @@
       - node-exporter
       - bat
       - btop
+      - cockpit
+      - cockpit-files
+      - cockpit-session-recording
+      - cockpit-selinux
+      - cockpit-podman
+      - cockpit-ws
+      - cockpit-ws-selinux
+      - cockpit-networkmanager
+      - cockpit-packagekit
+      - cockpit-storaged
 
     state: present
 
