@@ -15,3 +15,13 @@
     - ansible_facts['distribution'] == "Fedora"
     - ansible_facts['hostname'] == "violet-1"
   become: true
+
+- name: Enable and start the cockpit socket
+  ansible.builtin.systemd:
+    name: cockpit.socket
+    enabled: true
+    state: started
+  when:
+    - ansible_facts['distribution'] == "Fedora"
+    - ansible_facts['hostname'] == "violet-1"
+  become: true
