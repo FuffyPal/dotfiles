@@ -1,6 +1,6 @@
 ---
 
-- name: chack the flatpak
+- name: check the flatpak
   ansible.builtin.command: which flatpak
   register: flatpak_check
   ignore_errors: true

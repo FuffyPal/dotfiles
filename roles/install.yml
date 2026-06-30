@@ -68,7 +68,7 @@
       - snapper
       - python3-dnf-plugin-snapper
       - tailscale
-      # - node-exporter
+      - node-exporter
 
     state: present
 

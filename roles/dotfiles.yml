@@ -1,14 +1,12 @@
 ---
 
 - name: Copy system configuration files
-  ansible:
-    builtin:
-      copy:
-        src: "{{ item.src }}"
-        dest: "{{ item.dest }}"
-        owner: root
-        group: root
-        mode: "0644"
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: "0644"
 
   become: true
   with_items:
@@ -23,20 +21,16 @@
     - ansible_facts['hostname'] == "cutie"
 
 - name: Ensure target config directories exist
-  ansible:
-    builtin:
-      file:
-        path: "{{ ansible_facts['user_dir'] }}/.config/helix"
-        state: directory
-        mode: "0755"
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.config/helix"
+    state: directory
+    mode: "0755"
 
 - name: Copy user home dotfiles
-  ansible:
-    builtin:
-      copy:
-        src: "{{ item.src }}"
-        dest: "{{ ansible_facts['user_dir'] }}/{{ item.dest }}"
-        mode: "0644"
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ ansible_facts['user_dir'] }}/{{ item.dest }}"
+    mode: "0644"
 
   with_items:
     - { src: "home/bash/.bashrc", dest: ".bashrc" }
@@ -45,35 +39,27 @@
     - { src: "home/helix/config.toml", dest: ".config/helix/config.toml" }
 
 - name: Settings the background for gnome
-  ansible:
-    builtin:
-      command: "{{ item }}"
+  ansible.builtin.command: "{{ item }}"
 
   loop:
     - "gsettings set org.gnome.desktop.screensaver picture-uri file:///'{{ ansible_facts.env.PWD }}/assets/wallpaper/Wallpaper_2.png'"
     - "gsettings set org.gnome.desktop.background picture-uri file:///'{{ ansible_facts.env.PWD }}/assets/wallpaper/Wallpaper_2.png'"
     - "gsettings set org.gnome.desktop.background picture-uri-dark file:///'{{ ansible_facts.env.PWD }}/assets/wallpaper/Wallpaper_2.png'"
   when:
-    - ansible_facts['env']['XDG_CURRENT_DESKTOP'] == "GNOME"
     - inventory_hostname in groups['Desktop']
+    - ansible_facts['env']['XDG_CURRENT_DESKTOP'] == "GNOME"
     - ansible_facts['distribution'] == "Fedora"
     - ansible_facts['hostname'] == "cutie"
 
 - name: Settings the tailscale for violet-1{Server}
-  ansible:
-    builtin:
-      command: "sudo tailscale up --auth-key={{ violet_one_tailscale_key }} --advertise-exit-node"
-
+  ansible.builtin.command: "tailscale up --auth-key={{ violet_one_tailscale_key }} --ssh --advertise-exit-node"
   become: true
   when:
     - ansible_facts['distribution'] == "Fedora"
     - ansible_facts['hostname'] == "violet-1"
 
 - name: Settings the tailscale for cutie{Desktop}
-  ansible:
-    builtin:
-      command: "tailscale up --auth-key={{ cutie_tailscale_key }} --advertise-exit-node --operator={{ ansible_facts['user_id'] }}"
-
+  ansible.builtin.command: "tailscale up --auth-key={{ cutie_tailscale_key }} --advertise-exit-node --operator={{ ansible_facts['user_id'] }}"
   become: true
   when:
     - ansible_facts['distribution'] == "Fedora"

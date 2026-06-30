@@ -37,18 +37,18 @@
       ansible.builtin.include_tasks: roles/nvidia.yml
       tags: Nvidia
 
-    - name: Manage and sync user dotfiles
-      ansible.builtin.include_tasks: roles/dotfiles.yml
-      tags: dotfiles
-
     - name: Enable systemd services
       ansible.builtin.include_tasks: roles/systemd.yml
       tags: systemd
 
+    - name: Manage and sync user dotfiles
+      ansible.builtin.include_tasks: roles/dotfiles.yml
+      tags: dotfiles
+
     - name: Enable pal cloudy stack
       ansible.builtin.include_tasks: roles/pal-cloudy-stack.yml
       tags: stack
-      when: inventory_hostname in groups['Server']
+      when: inventory_hostname in groups['Servers']
 
     - name: enable ssh key
       ansible.builtin.include_tasks: roles/ssh_keys.yml
