@@ -1,7 +1,36 @@
 ---
-
 - name: Enable and start the tailscaled service
   ansible.builtin.systemd:
     name: tailscaled
     enabled: true
     state: started
+  become: true
+# - name: Enable and start the prometheus service
+#   ansible.builtin.systemd:
+#     name: prometheus
+#     enabled: true
+#     state: started
+#   when:
+#     - ansible_facts['distribution'] == "Fedora"
+#     - ansible_facts['hostname'] == "violet-1"
+#   become: true
+
+# - name: Enable and start the node_exporter service
+#   ansible.builtin.systemd:
+#     name: node_exporter
+#     enabled: true
+#     state: started
+#   when:
+#     - ansible_facts['distribution'] == "Fedora"
+#     - ansible_facts['hostname'] == "violet-1"
+#   become: true
+
+# - name: Enable and start the grafana service
+#   ansible.builtin.systemd:
+#     name: grafana
+#     enabled: true
+#     state: started
+#   when:
+#     - ansible_facts['distribution'] == "Fedora"
+#     - ansible_facts['hostname'] == "violet-1"
+#   become: true
